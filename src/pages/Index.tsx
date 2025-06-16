@@ -26,10 +26,14 @@ const Index = () => {
             </Badge>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-gold-600 bg-clip-text text-transparent mb-6">
-            Become a Legal Minister
-            <span className="block text-3xl md:text-4xl mt-2">in Under 5 Minutes</span>
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-gold-600 bg-clip-text text-transparent mb-4">
+            OfficiantBot through EverUnity Church Non-Profit
           </h1>
+          
+          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-gold-600 bg-clip-text text-transparent mb-6">
+            Become a Legal Minister
+            <span className="block text-2xl md:text-3xl mt-2">in Under 5 Minutes</span>
+          </h2>
           
           <div className="flex items-center justify-center mb-4">
             <Church className="h-6 w-6 text-purple-600 mr-2" />
