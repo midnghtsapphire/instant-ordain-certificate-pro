@@ -27,7 +27,7 @@ const Index = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-gold-600 bg-clip-text text-transparent mb-4">
-            OfficiantBot through EverUnity Church Non-Profit
+            Certified by EverUnity Church - OfficiantBot 
           </h1>
           
           <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-gold-600 bg-clip-text text-transparent mb-6">
