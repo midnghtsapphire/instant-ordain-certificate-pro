@@ -1,16 +1,7 @@
+
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Award } from "lucide-react";
 import { 
-  Award, 
-  Download, 
-  Search, 
-  Filter, 
-  Star,
   Heart,
   Cross,
   Globe,
@@ -18,8 +9,11 @@ import {
   Crown,
   Leaf,
   Mountain,
-  Church
+  Star
 } from "lucide-react";
+import CertificateHeader from "@/components/CertificateHeader";
+import CertificateFilters from "@/components/CertificateFilters";
+import CertificateCard from "@/components/CertificateCard";
 
 const Certificates = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -133,157 +127,24 @@ const Certificates = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const SampleCertificate = ({ cert }: { cert: typeof certificateTemplates[0] }) => {
-    const IconComponent = cert.icon;
-    return (
-      <div className="bg-white border-4 border-gold-300 p-8 rounded-lg shadow-lg">
-        <div className="text-center space-y-6">
-          <div className="border-b-2 border-gold-200 pb-4">
-            <h2 className="text-3xl font-bold text-blue-900">EverUnity Church</h2>
-            <p className="text-sm text-gray-600">Established 2010 • Non-Profit 501(c)(3)</p>
-          </div>
-          
-          <div className="py-6">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Certificate of Ordination</h3>
-            <div className="flex justify-center mb-4">
-              <IconComponent className="h-12 w-12 text-blue-600" />
-            </div>
-            <h4 className="text-xl font-semibold text-purple-600 mb-4">{cert.name}</h4>
-            <p className="text-lg text-gray-700 mb-6">This is to certify that</p>
-            <div className="border-b-2 border-gray-300 mx-auto w-64 mb-6">
-              <p className="text-xl font-bold text-blue-900 pb-2">[Your Name Here]</p>
-            </div>
-            <p className="text-lg text-gray-700 mb-6">
-              has been duly ordained as a {cert.name} of EverUnity Church and is hereby 
-              authorized to perform marriages, baptisms, funerals, and other religious ceremonies 
-              in accordance with the laws of all fifty states.
-            </p>
-          </div>
-          
-          <div className="flex justify-between items-end pt-6 border-t-2 border-gold-200">
-            <div className="text-left">
-              <div className="border-b border-gray-400 w-32 mb-2"></div>
-              <p className="text-sm text-gray-600">Date of Ordination</p>
-            </div>
-            <div className="text-center">
-              <Award className="h-12 w-12 text-gold-500 mx-auto mb-2" />
-              <p className="text-xs text-gray-500">Official Church Seal</p>
-            </div>
-            <div className="text-right">
-              <div className="border-b border-gray-400 w-32 mb-2"></div>
-              <p className="text-sm text-gray-600">Church Authority</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Certificate Templates</h1>
-          <p className="text-gray-600 mb-4">Choose from our collection of professional ordination certificates</p>
-          <div className="flex items-center">
-            <Church className="h-5 w-5 text-purple-600 mr-2" />
-            <p className="text-sm text-gray-700">
-              All certificates issued through <span className="font-semibold text-purple-600">EverUnity Church</span> with full ecclesiastical authority
-            </p>
-          </div>
-        </div>
-
-        {/* Search and Filter */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4">
-          <div className="flex-1">
-            <div className="relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-              <Input
-                placeholder="Search certificate templates..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-          </div>
-          <div className="flex gap-2 overflow-x-auto">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.id ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category.id)}
-                className="whitespace-nowrap"
-              >
-                <Filter className="h-4 w-4 mr-2" />
-                {category.name} ({category.count})
-              </Button>
-            ))}
-          </div>
-        </div>
+        <CertificateHeader />
+        
+        <CertificateFilters
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          categories={categories}
+        />
 
         {/* Certificate Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredCertificates.map((cert) => {
-            const IconComponent = cert.icon;
-            return (
-              <Card key={cert.id} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                {cert.popular && (
-                  <Badge className="absolute top-2 right-2 z-10 bg-red-500">
-                    Popular
-                  </Badge>
-                )}
-                
-                <div className="relative h-48 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
-                  <IconComponent className="h-16 w-16 text-blue-600" />
-                  <img 
-                    src={cert.preview} 
-                    alt={cert.name}
-                    className="absolute inset-0 w-full h-full object-cover opacity-20"
-                  />
-                </div>
-                
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg flex items-center justify-between">
-                    <span>{cert.name}</span>
-                    <span className="text-lg font-bold text-green-600">{cert.price}</span>
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent className="pt-0">
-                  <p className="text-gray-600 text-sm mb-4">{cert.description}</p>
-                  
-                  <div className="space-y-2 mb-4">
-                    {cert.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm">
-                        <Award className="h-3 w-3 text-green-500 mr-2 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Button className="w-full" size="sm">
-                      Get Certificate
-                    </Button>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="outline" className="w-full" size="sm">
-                          <Download className="h-4 w-4 mr-2" />
-                          Preview
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl">
-                        <DialogHeader>
-                          <DialogTitle>Sample Certificate - {cert.name}</DialogTitle>
-                        </DialogHeader>
-                        <SampleCertificate cert={cert} />
-                      </DialogContent>
-                    </Dialog>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {filteredCertificates.map((cert) => (
+            <CertificateCard key={cert.id} cert={cert} />
+          ))}
         </div>
 
         {filteredCertificates.length === 0 && (
