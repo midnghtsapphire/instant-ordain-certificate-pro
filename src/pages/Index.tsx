@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Star, Download, Users, Shield, Award } from "lucide-react";
+import { CheckCircle, Star, Download, Users, Shield, Award, Church } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StatsSection from "@/components/StatsSection";
@@ -30,6 +30,13 @@ const Index = () => {
             Become a Legal Minister
             <span className="block text-3xl md:text-4xl mt-2">in Under 5 Minutes</span>
           </h1>
+          
+          <div className="flex items-center justify-center mb-4">
+            <Church className="h-6 w-6 text-purple-600 mr-2" />
+            <p className="text-lg text-gray-700 font-medium">
+              Ordination services provided through <span className="text-purple-600 font-semibold">EverUnity Church</span> (Non-Profit 501c3)
+            </p>
+          </div>
           
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Get legally ordained online with instant certificate download. Officiate weddings, 
@@ -59,8 +66,8 @@ const Index = () => {
             <Card className="border-none shadow-lg bg-white/80 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <Shield className="h-12 w-12 text-blue-500 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Legal Compliance</h3>
-                <p className="text-gray-600">Valid in all 50 states with proper documentation</p>
+                <h3 className="text-lg font-semibold mb-2">Church Authority</h3>
+                <p className="text-gray-600">Backed by EverUnity Church with proper ecclesiastical credentials</p>
               </CardContent>
             </Card>
             

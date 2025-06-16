@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,8 @@ import {
   Sparkles,
   Crown,
   Leaf,
-  Mountain
+  Mountain,
+  Church
 } from "lucide-react";
 
 const Certificates = () => {
@@ -31,7 +31,7 @@ const Certificates = () => {
       category: "universal",
       icon: Globe,
       description: "Perfect for all faiths and non-denominational ceremonies",
-      features: ["All 50 states legal", "Lifetime validity", "Digital + Print"],
+      features: ["All 50 states legal", "Lifetime validity", "Digital + Print", "EverUnity Church seal"],
       price: "Free",
       popular: true,
       preview: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop"
@@ -41,8 +41,8 @@ const Certificates = () => {
       name: "Christian Minister",
       category: "christian",
       icon: Cross,
-      description: "Traditional Christian ordination certificate",
-      features: ["Biblical authority", "Church recognition", "Wedding legal"],
+      description: "Traditional Christian ordination through EverUnity Church",
+      features: ["Biblical authority", "Church recognition", "Wedding legal", "Apostolic succession"],
       price: "$9.99",
       popular: false,
       preview: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
@@ -52,8 +52,8 @@ const Certificates = () => {
       name: "Interfaith Minister",
       category: "interfaith",
       icon: Heart,
-      description: "Bridge multiple religious traditions",
-      features: ["Multi-faith ceremonies", "Cultural inclusive", "Global recognition"],
+      description: "Bridge multiple religious traditions under church authority",
+      features: ["Multi-faith ceremonies", "Cultural inclusive", "Global recognition", "Church backing"],
       price: "$14.99",
       popular: true,
       preview: "https://images.unsplash.com/photo-1519452634681-4d2395a55925?w=400&h=300&fit=crop"
@@ -63,8 +63,8 @@ const Certificates = () => {
       name: "Spiritual Life Coach",
       category: "spiritual",
       icon: Sparkles,
-      description: "Modern spiritual guidance certification",
-      features: ["Life coaching rights", "Spiritual counseling", "Meditation leader"],
+      description: "Modern spiritual guidance certification with church credentials",
+      features: ["Life coaching rights", "Spiritual counseling", "Meditation leader", "Church endorsement"],
       price: "$19.99",
       popular: false,
       preview: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
@@ -74,8 +74,8 @@ const Certificates = () => {
       name: "Premium Gold Seal",
       category: "premium",
       icon: Crown,
-      description: "Luxury certificate with gold embossing",
-      features: ["24k gold seal", "Premium paper", "Expedited processing", "Wallet card"],
+      description: "Luxury certificate with gold embossing and full church documentation",
+      features: ["24k gold seal", "Premium paper", "Expedited processing", "Wallet card", "Church letterhead"],
       price: "$49.99",
       popular: true,
       preview: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop"
@@ -85,8 +85,8 @@ const Certificates = () => {
       name: "Nature-Based Minister",
       category: "nature",
       icon: Leaf,
-      description: "Earth-centered and nature-focused ordination",
-      features: ["Outdoor ceremonies", "Eco-friendly", "Seasonal rituals"],
+      description: "Earth-centered ordination through EverUnity Church",
+      features: ["Outdoor ceremonies", "Eco-friendly", "Seasonal rituals", "Church authority"],
       price: "$12.99",
       popular: false,
       preview: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
@@ -96,8 +96,8 @@ const Certificates = () => {
       name: "Mountain Retreat Minister",
       category: "spiritual",
       icon: Mountain,
-      description: "Specialized for outdoor and destination ceremonies",
-      features: ["Destination weddings", "Outdoor expertise", "Adventure ceremonies"],
+      description: "Specialized for outdoor and destination ceremonies with church backing",
+      features: ["Destination weddings", "Outdoor expertise", "Adventure ceremonies", "Full church support"],
       price: "$16.99",
       popular: false,
       preview: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
@@ -107,8 +107,8 @@ const Certificates = () => {
       name: "Celebrity Minister Pro",
       category: "premium",
       icon: Star,
-      description: "High-profile events and celebrity ceremonies",
-      features: ["Media training", "Privacy protection", "VIP support", "Legal backup"],
+      description: "High-profile events with full EverUnity Church credentials",
+      features: ["Media training", "Privacy protection", "VIP support", "Legal backup", "Church endorsement"],
       price: "$99.99",
       popular: true,
       preview: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop"
@@ -137,7 +137,13 @@ const Certificates = () => {
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Certificate Templates</h1>
-          <p className="text-gray-600">Choose from our collection of professional ordination certificates</p>
+          <p className="text-gray-600 mb-4">Choose from our collection of professional ordination certificates</p>
+          <div className="flex items-center">
+            <Church className="h-5 w-5 text-purple-600 mr-2" />
+            <p className="text-sm text-gray-700">
+              All certificates issued through <span className="font-semibold text-purple-600">EverUnity Church</span> with full ecclesiastical authority
+            </p>
+          </div>
         </div>
 
         {/* Search and Filter */}
