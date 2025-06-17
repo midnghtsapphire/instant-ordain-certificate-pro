@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,8 +5,10 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Award, User, Mail, Lock, MapPin, Calendar } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Award, User, Mail, Lock, MapPin } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -20,10 +21,56 @@ const Signup = () => {
     agreeTerms: false,
     agreeAge: false
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const { signUp } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Signup data:", formData);
+    
+    if (!formData.agreeTerms || !formData.agreeAge) {
+      toast({
+        title: "Agreement required",
+        description: "Please agree to the terms and confirm your age.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const { error } = await signUp(formData.email, formData.password, {
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        state: formData.state,
+        ordination_type: formData.ordainationType
+      });
+
+      if (error) {
+        toast({
+          title: "Registration failed",
+          description: error.message,
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Success!",
+          description: "Your account has been created. Please check your email to verify your account."
+        });
+        navigate("/login");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const updateFormData = (field: string, value: any) => {
@@ -37,7 +84,7 @@ const Signup = () => {
           <Link to="/" className="inline-flex items-center space-x-2 mb-6">
             <Award className="h-8 w-8 text-blue-600" />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              OfficiantBot
+              SmartMinisterBot
             </span>
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Get Ordained Today</h1>
@@ -181,10 +228,10 @@ const Signup = () => {
               <Button
                 type="submit"
                 className="w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold text-lg"
-                disabled={!formData.agreeTerms || !formData.agreeAge}
+                disabled={!formData.agreeTerms || !formData.agreeAge || loading}
               >
                 <Award className="mr-2 h-5 w-5" />
-                Complete Ordination - FREE
+                {loading ? "Creating Account..." : "Complete Ordination - FREE"}
               </Button>
             </form>
 
