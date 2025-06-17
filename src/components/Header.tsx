@@ -33,7 +33,7 @@ const Header = () => {
               }`}
             />
             <span className="text-2xl font-bold bg-gradient-to-r from-everunity-blue-600 to-everunity-purple-600 bg-clip-text text-transparent">
-              SmartMinisterBot
+              WeddingOfficiantBot
             </span>
           </Link>
           

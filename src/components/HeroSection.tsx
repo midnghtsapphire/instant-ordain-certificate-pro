@@ -26,7 +26,7 @@ const HeroSection = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-everunity-blue-600 via-everunity-purple-600 to-everunity-gold-600 bg-clip-text text-transparent mb-4">
-          EverUnity Church 
+          WeddingOfficiantBot 
         </h1>
         
         <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-everunity-blue-600 via-everunity-purple-600 to-everunity-gold-600 bg-clip-text text-transparent mb-6">
