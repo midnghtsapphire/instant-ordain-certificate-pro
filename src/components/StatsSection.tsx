@@ -6,13 +6,13 @@ const StatsSection = () => {
   const stats = [
     {
       icon: Users,
-      number: "500,000+",
+      number: "50,000+",
       label: "Ministers Ordained",
       color: "text-sky-400"
     },
     {
       icon: Download,
-      number: "2.5M+",
+      number: "250K+",
       label: "Certificates Downloaded",
       color: "text-green-400"
     },
