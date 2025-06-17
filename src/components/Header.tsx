@@ -17,7 +17,7 @@ const Header = () => {
 
   const handleLogoClick = () => {
     setIsLogoClicked(true);
-    setTimeout(() => setIsLogoClicked(false), 200);
+    setTimeout(() => setIsLogoClicked(false), 800);
   };
 
   return (
@@ -28,8 +28,8 @@ const Header = () => {
             <img 
               src="/lovable-uploads/43757637-58f7-4860-b242-8c137266ab0d.png" 
               alt="EverUnity Church Logo" 
-              className={`h-10 w-10 transition-transform duration-200 ${
-                isLogoClicked ? 'scale-110' : 'scale-100'
+              className={`h-10 w-10 transition-all duration-500 ${
+                isLogoClicked ? 'scale-[3] z-50' : 'scale-100'
               }`}
             />
             <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
