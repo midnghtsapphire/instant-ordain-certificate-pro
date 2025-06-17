@@ -103,8 +103,8 @@ const Dashboard = () => {
           <CardHeader className="pb-4">
             <CardTitle className="text-lg md:text-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <span>My Certificates</span>
-              <Button className="text-sm">
-                <Award className="h-4 w-4 mr-2" />
+              <Button size="sm" className="text-xs h-8 px-3">
+                <Award className="h-3 w-3 mr-2" />
                 Create New Certificate
               </Button>
             </CardTitle>
@@ -127,20 +127,20 @@ const Dashboard = () => {
                     <Badge variant={cert.status === "Active" ? "default" : "secondary"} className="text-xs">
                       {cert.status}
                     </Badge>
-                    <div className="flex flex-wrap gap-2">
-                      <Button variant="outline" size="sm" className="text-xs">
+                    <div className="flex flex-wrap gap-1">
+                      <Button variant="outline" size="sm" className="text-xs h-7 px-2">
                         <Eye className="h-3 w-3 mr-1" />
                         View
                       </Button>
-                      <Button variant="outline" size="sm" className="text-xs">
+                      <Button variant="outline" size="sm" className="text-xs h-7 px-2">
                         <Download className="h-3 w-3 mr-1" />
                         Download
                       </Button>
-                      <Button variant="outline" size="sm" className="text-xs">
+                      <Button variant="outline" size="sm" className="text-xs h-7 px-2">
                         <Share2 className="h-3 w-3 mr-1" />
                         Share
                       </Button>
-                      <Button variant="outline" size="sm" className="text-xs">
+                      <Button variant="outline" size="sm" className="text-xs h-7 px-2">
                         <Edit className="h-3 w-3 mr-1" />
                         Edit
                       </Button>
