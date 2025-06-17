@@ -63,6 +63,45 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// EverUnity Church brand colors from logo
+				everunity: {
+					purple: {
+						50: '#faf7ff',
+						100: '#f3ecff',
+						200: '#e9dcff',
+						300: '#d8c0ff',
+						400: '#c198ff',
+						500: '#a765ff',
+						600: '#9333ea',
+						700: '#7c2d8f',
+						800: '#6b2475',
+						900: '#581c63'
+					},
+					gold: {
+						50: '#fffef7',
+						100: '#fffbeb',
+						200: '#fef3c7',
+						300: '#fde68a',
+						400: '#fcd34d',
+						500: '#f59e0b',
+						600: '#d97706',
+						700: '#b45309',
+						800: '#92400e',
+						900: '#78350f'
+					},
+					blue: {
+						50: '#eff6ff',
+						100: '#dbeafe',
+						200: '#bfdbfe',
+						300: '#93c5fd',
+						400: '#60a5fa',
+						500: '#3b82f6',
+						600: '#2563eb',
+						700: '#1d4ed8',
+						800: '#1e40af',
+						900: '#1e3a8a'
+					}
+				},
 				gold: {
 					50: '#fffdf2',
 					100: '#fef7cd',

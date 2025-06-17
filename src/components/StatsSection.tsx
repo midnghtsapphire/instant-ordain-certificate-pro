@@ -8,30 +8,30 @@ const StatsSection = () => {
       icon: Users,
       number: "500,000+",
       label: "Ministers Ordained",
-      color: "text-blue-600"
+      color: "text-everunity-blue-400"
     },
     {
       icon: Download,
       number: "2.5M+",
       label: "Certificates Downloaded",
-      color: "text-green-600"
+      color: "text-green-400"
     },
     {
       icon: Award,
       number: "50",
       label: "States Legal Coverage",
-      color: "text-purple-600"
+      color: "text-everunity-purple-400"
     },
     {
       icon: Star,
       number: "4.9/5",
       label: "Customer Rating",
-      color: "text-yellow-600"
+      color: "text-everunity-gold-400"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white">
+    <section className="py-16 bg-gradient-to-r from-everunity-blue-900 via-everunity-purple-900 to-everunity-blue-900 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -44,7 +44,7 @@ const StatsSection = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-center">
+            <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-center hover:bg-white/15 transition-all duration-300">
               <CardContent className="p-6">
                 <stat.icon className={`h-12 w-12 ${stat.color} mx-auto mb-4`} />
                 <div className="text-3xl font-bold mb-2">{stat.number}</div>
