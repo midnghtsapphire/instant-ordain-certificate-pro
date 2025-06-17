@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Mail, MapPin, Phone, Church } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -77,6 +78,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2024 SmartMinisterBot. All rights reserved. Ordination services provided through EverUnity Church (Non-Profit).
+              <div className="mt-2">
+                <span className="text-gray-500">Powered by </span>
+                <span className="text-amber-400 font-medium">Glowstar Labs</span>
+              </div>
             </div>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
