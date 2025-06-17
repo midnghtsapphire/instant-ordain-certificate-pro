@@ -1,3 +1,4 @@
+
 import { Mail, MapPin, Phone, Church } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -13,10 +14,10 @@ const Footer = () => {
                 alt="EverUnity Church Logo" 
                 className="h-10 w-10"
               />
-              <span className="text-2xl font-bold">WeddingOfficiantBot</span>
+              <span className="text-2xl font-bold">SmartMinisterBot</span>
             </div>
             <div className="flex items-center space-x-2 mb-6">
-              <Church className="h-5 w-5 text-purple-400" />
+              <Church className="h-5 w-5 text-amber-400" />
               <span className="text-sm text-gray-300">Lovingly provided by EverUnity Church (Non-Profit 501c3)</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
@@ -25,15 +26,15 @@ const Footer = () => {
             </p>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-400 mr-3" />
+                <Phone className="h-5 w-5 text-amber-400 mr-3" />
                 <span>1-800-MINISTER (1-800-646-4783)</span>
               </div>
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-400 mr-3" />
+                <Mail className="h-5 w-5 text-amber-400 mr-3" />
                 <span>support@officiantbot.com</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 text-blue-400 mr-3" />
+                <MapPin className="h-5 w-5 text-amber-400 mr-3" />
                 <span>Legal in All 50 States</span>
               </div>
             </div>
@@ -65,7 +66,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 WeddingOfficiantBot. All rights reserved. Ordination services provided through EverUnity Church (Non-Profit).
+              © 2024 SmartMinisterBot. All rights reserved. Ordination services provided through EverUnity Church (Non-Profit).
             </div>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
