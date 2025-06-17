@@ -1,8 +1,15 @@
-
+import { useState } from "react";
 import { Mail, MapPin, Phone, Church } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [isLogoClicked, setIsLogoClicked] = useState(false);
+
+  const handleLogoClick = () => {
+    setIsLogoClicked(true);
+    setTimeout(() => setIsLogoClicked(false), 800);
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -12,7 +19,10 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/43757637-58f7-4860-b242-8c137266ab0d.png" 
                 alt="EverUnity Church Logo" 
-                className="h-10 w-10"
+                className={`h-10 w-10 cursor-pointer transition-all duration-500 ${
+                  isLogoClicked ? 'scale-[3] z-50' : 'scale-100'
+                }`}
+                onClick={handleLogoClick}
               />
               <span className="text-2xl font-bold">SmartMinisterBot</span>
             </div>

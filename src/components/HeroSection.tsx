@@ -8,6 +8,13 @@ import SampleCertificate from "./SampleCertificate";
 import FeatureCards from "./FeatureCards";
 
 const HeroSection = () => {
+  const [isLogoClicked, setIsLogoClicked] = useState(false);
+
+  const handleLogoClick = () => {
+    setIsLogoClicked(true);
+    setTimeout(() => setIsLogoClicked(false), 800);
+  };
+
   return (
     <section className="pt-20 pb-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
@@ -17,11 +24,13 @@ const HeroSection = () => {
           </Badge>
         </div>
         
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6" onClick={handleLogoClick}>
           <img 
             src="/lovable-uploads/43757637-58f7-4860-b242-8c137266ab0d.png" 
             alt="EverUnity Church Logo" 
-            className="h-32 w-32"
+            className={`h-32 w-32 cursor-pointer transition-all duration-500 ${
+              isLogoClicked ? 'scale-[3] z-50' : 'scale-100'
+            }`}
           />
         </div>
         
