@@ -27,7 +27,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     if (!isSupabaseConfigured() || !supabase) {
-      console.warn('Supabase is not configured. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY environment variables.')
+      console.warn('Supabase is not configured. Authentication will be disabled.')
       setLoading(false)
       return
     }
@@ -49,36 +49,74 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signUp = async (email: string, password: string, userData: any) => {
     if (!isSupabaseConfigured() || !supabase) {
-      return { data: null, error: { message: 'Supabase is not configured' } }
+      console.error('Supabase is not configured. Please set up Supabase integration.')
+      return { 
+        data: null, 
+        error: { 
+          message: 'Authentication service is not configured. Please contact support.' 
+        } 
+      }
     }
 
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: userData
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: userData
+        }
+      })
+      return { data, error }
+    } catch (error) {
+      console.error('SignUp error:', error)
+      return { 
+        data: null, 
+        error: { 
+          message: 'An error occurred during sign up. Please try again.' 
+        } 
       }
-    })
-    return { data, error }
+    }
   }
 
   const signIn = async (email: string, password: string) => {
     if (!isSupabaseConfigured() || !supabase) {
-      return { data: null, error: { message: 'Supabase is not configured' } }
+      console.error('Supabase is not configured. Please set up Supabase integration.')
+      return { 
+        data: null, 
+        error: { 
+          message: 'Authentication service is not configured. Please contact support.' 
+        } 
+      }
     }
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
-    return { data, error }
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      })
+      return { data, error }
+    } catch (error) {
+      console.error('SignIn error:', error)
+      return { 
+        data: null, 
+        error: { 
+          message: 'An error occurred during sign in. Please try again.' 
+        } 
+      }
+    }
   }
 
   const signOut = async () => {
     if (!isSupabaseConfigured() || !supabase) {
+      console.error('Supabase is not configured.')
       return
     }
-    await supabase.auth.signOut()
+    
+    try {
+      await supabase.auth.signOut()
+    } catch (error) {
+      console.error('SignOut error:', error)
+    }
   }
 
   const value = {

@@ -1,15 +1,19 @@
 
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key'
-
-// Only create client if we have real values
-export const supabase = supabaseUrl.includes('placeholder') || supabaseAnonKey.includes('placeholder')
-  ? null
-  : createClient(supabaseUrl, supabaseAnonKey)
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 // Helper to check if Supabase is configured
 export const isSupabaseConfigured = () => {
-  return supabase !== null
+  return !!(supabaseUrl && supabaseAnonKey && 
+    !supabaseUrl.includes('placeholder') && 
+    !supabaseAnonKey.includes('placeholder'))
 }
+
+// Only create client if we have real values
+export const supabase = isSupabaseConfigured() 
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : null
+
+console.log('Supabase configured:', isSupabaseConfigured())
