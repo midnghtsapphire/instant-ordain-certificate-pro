@@ -17,7 +17,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-2 mb-6">
               <Church className="h-5 w-5 text-purple-400" />
-              <span className="text-sm text-gray-300">Powered by EverUnity Church (Non-Profit 501c3)</span>
+              <span className="text-sm text-gray-300">Lovingly provided by EverUnity Church (Non-Profit 501c3)</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               The world's most trusted online ordination platform. Get legally ordained 
