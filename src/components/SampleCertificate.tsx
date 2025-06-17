@@ -1,11 +1,16 @@
 
-import { Award } from "lucide-react";
-
 const SampleCertificate = () => {
   return (
     <div className="bg-white border-4 border-gold-300 p-8 rounded-lg shadow-lg">
       <div className="text-center space-y-6">
         <div className="border-b-2 border-gold-200 pb-4">
+          <div className="flex justify-center mb-4">
+            <img 
+              src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+              alt="EverUnity Church Logo" 
+              className="h-16 w-16"
+            />
+          </div>
           <h2 className="text-3xl font-bold text-blue-900">EverUnity Church</h2>
           <p className="text-sm text-gray-600">Established 2010 • Non-Profit 501(c)(3)</p>
         </div>
@@ -29,7 +34,11 @@ const SampleCertificate = () => {
             <p className="text-sm text-gray-600">Date of Ordination</p>
           </div>
           <div className="text-center">
-            <Award className="h-12 w-12 text-gold-500 mx-auto mb-2" />
+            <img 
+              src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+              alt="EverUnity Church Seal" 
+              className="h-12 w-12 mx-auto mb-2"
+            />
             <p className="text-xs text-gray-500">Official Church Seal</p>
           </div>
           <div className="text-right">

@@ -1,5 +1,4 @@
-
-import { Award, Mail, MapPin, Phone, Church } from "lucide-react";
+import { Mail, MapPin, Phone, Church } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -8,8 +7,12 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Award className="h-8 w-8 text-blue-400" />
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+                alt="EverUnity Church Logo" 
+                className="h-10 w-10"
+              />
               <span className="text-2xl font-bold">OfficiantBot</span>
             </div>
             <div className="flex items-center space-x-2 mb-6">

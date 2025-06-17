@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +14,14 @@ const HeroSection = () => {
           <Badge variant="secondary" className="bg-gradient-to-r from-gold-100 to-yellow-100 text-gold-800 border-gold-200">
             ⭐ #1 Trusted Online Ordination Platform
           </Badge>
+        </div>
+        
+        <div className="flex justify-center mb-6">
+          <img 
+            src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+            alt="EverUnity Church Logo" 
+            className="h-32 w-32"
+          />
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-gold-600 bg-clip-text text-transparent mb-4">

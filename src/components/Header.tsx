@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Award, User, Settings } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -11,8 +11,12 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <Award className="h-8 w-8 text-blue-600" />
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+              alt="EverUnity Church Logo" 
+              className="h-10 w-10"
+            />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               OfficiantBot
             </span>
