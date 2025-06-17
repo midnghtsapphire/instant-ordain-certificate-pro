@@ -19,25 +19,25 @@ const HeroSection = () => {
         
         <div className="flex justify-center mb-6">
           <img 
-            src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
+            src="/lovable-uploads/43757637-58f7-4860-b242-8c137266ab0d.png" 
             alt="EverUnity Church Logo" 
             className="h-32 w-32"
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-amber-800 via-amber-900 to-black bg-clip-text text-transparent mb-4">
+        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 bg-clip-text text-transparent mb-4">
           SmartMinisterBot 
         </h1>
         
-        <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-amber-800 via-amber-900 to-black bg-clip-text text-transparent mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-clip-text text-transparent mb-6">
           Become a Legal Minister
           <span className="block text-2xl md:text-3xl mt-2">in Under 5 Minutes</span>
         </h2>
         
         <div className="flex items-center justify-center mb-4">
-          <Church className="h-6 w-6 text-amber-800 mr-2" />
+          <Church className="h-6 w-6 text-amber-700 mr-2" />
           <p className="text-lg text-gray-700 font-medium">
-            Ordination services provided through <span className="text-amber-800 font-semibold">EverUnity Church</span> (Non-Profit 501c3)
+            Ordination services provided through <span className="text-amber-700 font-semibold">EverUnity Church</span> (Non-Profit 501c3)
           </p>
         </div>
         
@@ -47,7 +47,7 @@ const HeroSection = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="bg-gradient-to-r from-amber-800 to-amber-900 hover:from-amber-900 hover:to-black text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <Button size="lg" className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
             <Award className="mr-2 h-5 w-5" />
             Get Ordained Now - FREE
           </Button>

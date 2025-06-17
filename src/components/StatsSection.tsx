@@ -8,7 +8,7 @@ const StatsSection = () => {
       icon: Users,
       number: "500,000+",
       label: "Ministers Ordained",
-      color: "text-everunity-blue-400"
+      color: "text-sky-400"
     },
     {
       icon: Download,
@@ -20,18 +20,18 @@ const StatsSection = () => {
       icon: Award,
       number: "50",
       label: "States Legal Coverage",
-      color: "text-everunity-purple-400"
+      color: "text-amber-400"
     },
     {
       icon: Star,
       number: "4.9/5",
       label: "Customer Rating",
-      color: "text-everunity-gold-400"
+      color: "text-yellow-400"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-everunity-blue-900 via-everunity-purple-900 to-everunity-blue-900 text-white">
+    <section className="py-16 bg-gradient-to-r from-sky-900 via-gray-900 to-sky-900 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

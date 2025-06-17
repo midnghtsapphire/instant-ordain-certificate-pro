@@ -40,7 +40,7 @@ const PricingSection = () => {
         "Ceremony Scripts Library"
       ],
       cta: "Upgrade to Premium",
-      color: "from-blue-600 to-purple-600"
+      color: "from-sky-600 to-amber-600"
     },
     {
       name: "Professional Ministry",
@@ -60,7 +60,7 @@ const PricingSection = () => {
         "Marketing Materials"
       ],
       cta: "Start Your Ministry",
-      color: "from-purple-600 to-pink-600"
+      color: "from-amber-600 to-orange-600"
     }
   ];
 
@@ -78,10 +78,10 @@ const PricingSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative border-2 ${plan.popular ? 'border-blue-500 shadow-2xl scale-105' : 'border-gray-200 shadow-lg'} hover:shadow-xl transition-all duration-300`}>
+            <Card key={index} className={`relative border-2 ${plan.popular ? 'border-amber-500 shadow-2xl scale-105' : 'border-gray-200 shadow-lg'} hover:shadow-xl transition-all duration-300`}>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 text-sm font-semibold">
+                  <Badge className="bg-gradient-to-r from-sky-600 to-amber-600 text-white px-4 py-1 text-sm font-semibold">
                     MOST POPULAR
                   </Badge>
                 </div>
@@ -118,7 +118,7 @@ const PricingSection = () => {
                 </ul>
                 
                 <Button 
-                  className={`w-full py-3 text-lg font-semibold ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' : 'bg-gray-900 hover:bg-gray-800'} text-white`}
+                  className={`w-full py-3 text-lg font-semibold ${plan.popular ? 'bg-gradient-to-r from-sky-600 to-amber-600 hover:from-sky-700 hover:to-amber-700' : 'bg-gray-900 hover:bg-gray-800'} text-white`}
                 >
                   {plan.cta}
                 </Button>

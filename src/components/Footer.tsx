@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
+                src="/lovable-uploads/43757637-58f7-4860-b242-8c137266ab0d.png" 
                 alt="EverUnity Church Logo" 
                 className="h-10 w-10"
               />
