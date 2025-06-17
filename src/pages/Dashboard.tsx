@@ -41,57 +41,57 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Ministry Dashboard</h1>
-          <p className="text-gray-600">Manage your certificates and ministry activities</p>
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Ministry Dashboard</h1>
+          <p className="text-sm md:text-base text-gray-600">Manage your certificates and ministry activities</p>
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4">
               <div className="flex items-center">
-                <Award className="h-8 w-8 text-blue-600 mr-3" />
+                <Award className="h-6 w-6 md:h-8 md:w-8 text-blue-600 mr-2 md:mr-3" />
                 <div>
-                  <p className="text-2xl font-bold">{userStats.certificatesIssued}</p>
-                  <p className="text-sm text-gray-600">Certificates</p>
+                  <p className="text-lg md:text-2xl font-bold">{userStats.certificatesIssued}</p>
+                  <p className="text-xs md:text-sm text-gray-600">Certificates</p>
                 </div>
               </div>
             </CardContent>
           </Card>
           
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4">
               <div className="flex items-center">
-                <Users className="h-8 w-8 text-green-600 mr-3" />
+                <Users className="h-6 w-6 md:h-8 md:w-8 text-green-600 mr-2 md:mr-3" />
                 <div>
-                  <p className="text-2xl font-bold">{userStats.weddingsOfficiated}</p>
-                  <p className="text-sm text-gray-600">Weddings</p>
+                  <p className="text-lg md:text-2xl font-bold">{userStats.weddingsOfficiated}</p>
+                  <p className="text-xs md:text-sm text-gray-600">Weddings</p>
                 </div>
               </div>
             </CardContent>
           </Card>
           
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4">
               <div className="flex items-center">
-                <Calendar className="h-8 w-8 text-purple-600 mr-3" />
+                <Calendar className="h-6 w-6 md:h-8 md:w-8 text-purple-600 mr-2 md:mr-3" />
                 <div>
-                  <p className="text-sm font-semibold">{userStats.memberSince}</p>
-                  <p className="text-sm text-gray-600">Member Since</p>
+                  <p className="text-xs md:text-sm font-semibold">{userStats.memberSince}</p>
+                  <p className="text-xs md:text-sm text-gray-600">Member Since</p>
                 </div>
               </div>
             </CardContent>
           </Card>
           
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4">
               <div className="flex items-center">
-                <Star className="h-8 w-8 text-yellow-600 mr-3" />
+                <Star className="h-6 w-6 md:h-8 md:w-8 text-yellow-600 mr-2 md:mr-3" />
                 <div>
-                  <p className="text-sm font-semibold">{userStats.nextRenewal}</p>
-                  <p className="text-sm text-gray-600">Next Renewal</p>
+                  <p className="text-xs md:text-sm font-semibold">{userStats.nextRenewal}</p>
+                  <p className="text-xs md:text-sm text-gray-600">Next Renewal</p>
                 </div>
               </div>
             </CardContent>
@@ -100,10 +100,10 @@ const Dashboard = () => {
 
         {/* Certificates Section */}
         <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-lg md:text-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <span>My Certificates</span>
-              <Button>
+              <Button className="text-sm">
                 <Award className="h-4 w-4 mr-2" />
                 Create New Certificate
               </Button>
@@ -112,37 +112,39 @@ const Dashboard = () => {
           <CardContent>
             <div className="space-y-4">
               {certificates.map((cert) => (
-                <div key={cert.id} className="flex items-center justify-between p-4 border rounded-lg">
-                  <div className="flex items-center space-x-4">
-                    <Award className="h-8 w-8 text-blue-600" />
-                    <div>
-                      <h3 className="font-semibold">{cert.type}</h3>
+                <div key={cert.id} className="flex flex-col lg:flex-row lg:items-center justify-between p-4 border rounded-lg gap-4">
+                  <div className="flex items-start space-x-3">
+                    <Award className="h-6 w-6 md:h-8 md:w-8 text-blue-600 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="text-base md:text-lg font-semibold">{cert.type}</h3>
                       <p className="text-sm text-gray-600">
                         Issued: {cert.issueDate} • Expires: {cert.expiryDate}
                       </p>
                       <p className="text-xs text-gray-500">{cert.downloads} downloads</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Badge variant={cert.status === "Active" ? "default" : "secondary"}>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                    <Badge variant={cert.status === "Active" ? "default" : "secondary"} className="text-xs">
                       {cert.status}
                     </Badge>
-                    <Button variant="outline" size="sm">
-                      <Eye className="h-4 w-4 mr-1" />
-                      View
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Download className="h-4 w-4 mr-1" />
-                      Download
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Share2 className="h-4 w-4 mr-1" />
-                      Share
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Edit className="h-4 w-4 mr-1" />
-                      Edit
-                    </Button>
+                    <div className="flex flex-wrap gap-2">
+                      <Button variant="outline" size="sm" className="text-xs">
+                        <Eye className="h-3 w-3 mr-1" />
+                        View
+                      </Button>
+                      <Button variant="outline" size="sm" className="text-xs">
+                        <Download className="h-3 w-3 mr-1" />
+                        Download
+                      </Button>
+                      <Button variant="outline" size="sm" className="text-xs">
+                        <Share2 className="h-3 w-3 mr-1" />
+                        Share
+                      </Button>
+                      <Button variant="outline" size="sm" className="text-xs">
+                        <Edit className="h-3 w-3 mr-1" />
+                        Edit
+                      </Button>
+                    </div>
                   </div>
                 </div>
               ))}
