@@ -13,7 +13,7 @@ const Footer = () => {
                 alt="EverUnity Church Logo" 
                 className="h-10 w-10"
               />
-              <span className="text-2xl font-bold">OfficiantBot</span>
+              <span className="text-2xl font-bold">MinisterBot</span>
             </div>
             <div className="flex items-center space-x-2 mb-6">
               <Church className="h-5 w-5 text-purple-400" />
@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 OfficiantBot. All rights reserved. Ordination services provided through EverUnity Church (Non-Profit).
+              © 2024 MinisterBot. All rights reserved. Ordination services provided through EverUnity Church (Non-Profit).
             </div>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
