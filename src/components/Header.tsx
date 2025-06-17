@@ -18,7 +18,7 @@ const Header = () => {
               className="h-10 w-10"
             />
             <span className="text-2xl font-bold bg-gradient-to-r from-everunity-blue-600 to-everunity-purple-600 bg-clip-text text-transparent">
-              MinisterBot
+              SmartMinisterBot
             </span>
           </Link>
           
