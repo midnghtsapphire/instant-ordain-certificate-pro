@@ -13,7 +13,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
               alt="EverUnity Church Logo" 
               className="h-10 w-10"
             />

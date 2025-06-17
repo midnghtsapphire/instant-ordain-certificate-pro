@@ -28,7 +28,7 @@ const CertificateCard = ({ cert }: CertificateCardProps) => {
         <div className="border-b-2 border-gold-200 pb-4">
           <div className="flex justify-center mb-4">
             <img 
-              src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
               alt="EverUnity Church Logo" 
               className="h-16 w-16"
             />
@@ -61,7 +61,7 @@ const CertificateCard = ({ cert }: CertificateCardProps) => {
           </div>
           <div className="text-center">
             <img 
-              src="/lovable-uploads/d4c6b8c6-3b32-4bc1-a2dd-2f8a4c5e9b7d.png" 
+              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
               alt="EverUnity Church Seal" 
               className="h-12 w-12 mx-auto mb-2"
             />
