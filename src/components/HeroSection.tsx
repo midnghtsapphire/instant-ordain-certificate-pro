@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,7 +19,7 @@ const HeroSection = () => {
         
         <div className="flex justify-center mb-6">
           <img 
-            src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
+            src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
             alt="EverUnity Church Logo" 
             className="h-32 w-32"
           />

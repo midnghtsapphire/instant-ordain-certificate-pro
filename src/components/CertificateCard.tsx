@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +27,7 @@ const CertificateCard = ({ cert }: CertificateCardProps) => {
         <div className="border-b-2 border-gold-200 pb-4">
           <div className="flex justify-center mb-4">
             <img 
-              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
+              src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
               alt="EverUnity Church Logo" 
               className="h-16 w-16"
             />
@@ -61,7 +60,7 @@ const CertificateCard = ({ cert }: CertificateCardProps) => {
           </div>
           <div className="text-center">
             <img 
-              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
+              src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
               alt="EverUnity Church Seal" 
               className="h-12 w-12 mx-auto mb-2"
             />

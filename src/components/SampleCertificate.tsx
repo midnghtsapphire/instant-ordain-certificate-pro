@@ -1,4 +1,3 @@
-
 const SampleCertificate = () => {
   return (
     <div className="bg-white border-4 border-gold-300 p-8 rounded-lg shadow-lg">
@@ -6,7 +5,7 @@ const SampleCertificate = () => {
         <div className="border-b-2 border-gold-200 pb-4">
           <div className="flex justify-center mb-4">
             <img 
-              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
+              src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
               alt="EverUnity Church Logo" 
               className="h-16 w-16"
             />
@@ -35,7 +34,7 @@ const SampleCertificate = () => {
           </div>
           <div className="text-center">
             <img 
-              src="/lovable-uploads/e0da411d-bf08-439a-be39-c331ba6e5f25.png" 
+              src="/lovable-uploads/8d8510c7-e2f7-47ed-a1a1-9ec665bf380f.png" 
               alt="EverUnity Church Seal" 
               className="h-12 w-12 mx-auto mb-2"
             />
