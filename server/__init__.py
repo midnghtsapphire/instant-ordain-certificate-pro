@@ -1,1 +1,1 @@
-"""Server package for Ordain Certificates."""\n
+"""Server package for Ordain Certificates."""
