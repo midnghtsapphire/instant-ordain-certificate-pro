@@ -206,36 +206,25 @@ Before declaring work complete:
 ## Project-Specific Context
 
 ### What This Project Is
-Sessiono — session musician subscription platform. Users browse, book, and pay session musicians. Musicians list their services, set rates, and manage bookings.
+Instant Ordain Certificate Pro — a hybrid Vite + FastAPI platform for online minister ordination, certificate delivery, subscription upsells, and admin visibility under the EverUnity Church / SmartMinisterBot brand.
 
 ### Architecture
 ```
-app/                    # Expo Router file-based routing
-  (tabs)/               # Bottom tab navigation
-    index.tsx           # Home — browse featured musicians
-    search.tsx          # Search by instrument/genre
-    bookings.tsx        # My bookings list
-    profile.tsx         # User profile + subscription
-  auth/login.tsx        # Login/signup modal
-  musician/[id].tsx     # Musician detail + booking
-components/             # Reusable UI components
-lib/supabase.ts         # Supabase client with SecureStore
-constants/              # Theme, config
+src/                    # React marketing site + auth/dashboard pages
+server/                 # FastAPI auth, billing, config, and SQLAlchemy models
+public/                 # Static assets and uploaded brand imagery
+supabase/               # Supabase configuration for frontend auth/integration
 ```
 
 ### Key Commands
 ```bash
-npx expo start          # Dev server (scan QR with Expo Go)
-npx expo start --web    # Web dev server
-eas build --platform all  # Build for iOS + Android
-eas submit --platform ios  # Submit to App Store
+npm install && npm run build                  # Frontend production build
+docker-compose up -d                          # Local full stack via Docker
+uvicorn server.main:app --reload --port 8080 # Local backend
 ```
 
 ### Current State
-- UI scaffolding complete with dark cinematic theme
-- Demo data in place — needs Supabase integration
-- Auth screen built — needs Supabase auth wiring
-- Stripe subscription integration not started
-- Musician profile photos not implemented (use expo-image)
-- Push notifications not implemented
-- Search is static — needs Supabase full-text search
+- Marketing site, certificate catalog, pricing, reviews, contact, login, signup, dashboard, and admin views are present
+- FastAPI backend exposes health, auth, billing, and public config endpoints
+- Supabase frontend auth expects VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY
+- Stripe checkout creation exists on the backend; webhook completion logic is still partial

@@ -1,14 +1,18 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "instant-ordain-certificate-pro",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "research:artifacts": "node scripts/generate-research-artifacts.js",
+    "test": "npm run research:artifacts && node scripts/test-baseline.js",
     "build": "vite build",
+    "build:baseline": "node scripts/build-baseline.js",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:repo": "python validate.py"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
