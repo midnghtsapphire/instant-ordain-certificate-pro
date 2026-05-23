@@ -1,79 +1,99 @@
-# Ordain Certificates
+# Instant Ordain Certificate Pro
 
-Certificate generation system for ordain.church
+Instant Ordain Certificate Pro is a hybrid Vite + FastAPI product for SmartMinisterBot / EverUnity Church. It combines a consumer-facing ordination website with certificate browsing, pricing, reviews, account screens, an admin surface, and backend APIs for authentication and Stripe billing.
 
-## Features
+## What the repository does
 
-- ✅ FastAPI backend with full REST API
-- ✅ PostgreSQL database with SQLAlchemy ORM
-- ✅ JWT authentication + Google OAuth
-- ✅ Dual-mode Stripe billing (test/live)
-- ✅ Redis caching
-- ✅ Docker + docker-compose setup
-- ✅ OpenAI integration for AI features
+- markets ordination packages and premium certificate upgrades
+- lets visitors browse certificate templates and pricing tiers
+- exposes login, signup, dashboard, review, contact, legal info, and admin screens
+- serves backend auth, public config, billing, and health endpoints
+- supports local full-stack development through Docker
 
-## Quick Start
+## Current repository status
+
+- frontend build is working with `npm run build`
+- frontend lint has pre-existing issues unrelated to this S2M documentation pass
+- no automated test runner is configured in the current clone
+- Stripe checkout session creation exists; webhook lifecycle completion is still partial
+
+## Quick start
 
 ### Prerequisites
-- Docker and Docker Compose
-- Python 3.11+ (for local development)
+- Node.js 20+
+- Python 3.11+
+- Docker and Docker Compose (for the easiest local full stack)
 
-### Setup
+### Environment setup
+Copy `.env.example` to `.env` and fill in:
+- backend values such as `DATABASE_URL`, `JWT_SECRET`, and Stripe keys
+- frontend Supabase values `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
 
-1. Clone the repository
-2. Copy `.env.example` to `.env` and fill in your credentials
-3. Start with Docker Compose:
+### Frontend-only development
+```bash
+npm install
+npm run build
+npm run dev
+```
 
+The Vite dev server will run on the default local frontend port.
+
+### Backend-only development
+```bash
+pip install -r requirements.txt
+uvicorn server.main:app --reload --port 8080
+```
+
+### Full stack with Docker
 ```bash
 docker-compose up -d
 ```
 
-4. Access the API at `http://localhost:8002`
-5. API docs at `http://localhost:8002/docs`
+- app: `http://localhost:8002`
+- docs: `http://localhost:8002/docs`
+- database: `localhost:9002`
+- redis: `localhost:10002`
 
-### Local Development
+## Core routes
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
+### Frontend
+- `/`
+- `/certificates`
+- `/pricing`
+- `/reviews`
+- `/contact`
+- `/login`
+- `/signup`
+- `/dashboard`
+- `/admin`
 
-# Run database migrations
-# (TODO: Add Alembic migrations)
+### API
+- `GET /health`
+- `GET /api/config`
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+- `POST /api/billing/create-checkout-session`
+- `POST /api/billing/webhook`
+- `GET /api/billing/subscription`
 
-# Start development server
-uvicorn server.main:app --reload --port 8002
-```
+## Tech stack
 
-## API Endpoints
+- frontend: React, TypeScript, Vite, Tailwind, shadcn/ui
+- backend: FastAPI, SQLAlchemy, Pydantic Settings
+- auth: Supabase on the frontend, JWT auth endpoints on the backend
+- billing: Stripe
+- data services: PostgreSQL and Redis
+- deployment: Docker multi-stage build + docker-compose
 
-- `GET /health` - Health check
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login
-- `GET /api/auth/me` - Get current user
-- (More endpoints in `/docs`)
+## Ship-to-market docs
 
-## Environment Variables
-
-See `.env.example` for all required environment variables.
-
-### Stripe Dual Mode
-
-The app supports both Stripe test and live modes. Set `STRIPE_MODE=test` or `STRIPE_MODE=live` in your `.env` file.
-
-## Tech Stack
-
-- **Backend:** FastAPI, Python 3.11
-- **Database:** PostgreSQL 15
-- **Cache:** Redis 7
-- **Auth:** JWT + Google OAuth
-- **Payments:** Stripe
-- **AI:** OpenAI API
-- **Deployment:** Docker, docker-compose
-
-## License
-
-Proprietary - All rights reserved
+- [CHANGELOG.md](./CHANGELOG.md)
+- [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
+- [GO_TO_MARKET.md](./GO_TO_MARKET.md)
+- [BRAND_GUIDELINES.md](./BRAND_GUIDELINES.md)
+- [SECURITY.md](./SECURITY.md)
 
 ## Support
 
-For support, email support@example.com
+This repository is proprietary to MIDNGHTSAPPHIRE / Audrey Evans. Use the repository issue tracker or owner contact path for support and launch coordination.

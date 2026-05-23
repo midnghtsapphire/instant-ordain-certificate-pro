@@ -1,9 +1,9 @@
-"""Configuration for Ordain Certificates."""
+"""Configuration for Instant Ordain Certificate Pro."""
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 class Settings(BaseSettings):
-    APP_NAME: str = "Ordain Certificates"
+    APP_NAME: str = "Instant Ordain Certificate Pro"
     APP_URL: str = "http://localhost:8002"
     DATABASE_URL: str = "postgresql://appuser:password@db:5432/certificates"
     JWT_SECRET: str = "change-me-to-a-random-secret"
