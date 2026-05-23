@@ -3,6 +3,11 @@
 ## Positioning
 Instant Ordain Certificate Pro sells fast, digital-first ordination credentials for people who need to officiate weddings or ceremonies quickly, with upsells for premium certificate packages and ongoing ministry support.
 
+## Project analysis
+- **Value:** the repository already combines a testable consumer website, login/signup flow, admin panel, and Stripe-backed monetization path in one product surface.
+- **Goal priority:** priority one is converting the existing funnel into a verified launchable business by closing deployment traceability and billing-fulfillment gaps.
+- **Three-year framing:** the product is aligned to the user's ten-million-in-three-years expectation through direct certificate sales, premium bundle expansion, and conversion optimization rather than enterprise-only sales.
+
 ## Why this product can win
 - Couples continue to shift toward micro-weddings, courthouse ceremonies, destination ceremonies, and friend-or-family officiants, which increases demand for fast online ordination paths.
 - The U.S. wedding services market remains large, and officiant services continue to represent a real spending category instead of a novelty niche.

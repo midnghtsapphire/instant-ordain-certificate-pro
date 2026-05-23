@@ -10,11 +10,19 @@ Instant Ordain Certificate Pro is a hybrid Vite + FastAPI product for SmartMinis
 - serves backend auth, public config, billing, and health endpoints
 - supports local full-stack development through Docker
 
+## Project analysis
+
+- **Value:** this repository already contains the full funnel surface needed to sell online ordination and certificate upgrades instead of only a backend or only a marketing shell.
+- **Goal priority:** the highest-priority next step is turning the existing UI + API surface into a launchable revenue path with verified billing fulfillment and deployment traceability.
+- **How it advances overall goals:** this product can convert direct consumer search demand for fast ordination into one-time certificate revenue, premium upsells, and repeat ministry-support offers.
+
 ## Current repository status
 
+- baseline repo test is available with `npm test`
 - frontend build is working with `npm run build`
+- revvel baseline build validation is available with `npm run build:baseline`
+- repo validation is available with `python validate.py`
 - frontend lint has pre-existing issues unrelated to this S2M documentation pass
-- no automated test runner is configured in the current clone
 - Stripe checkout session creation exists; webhook lifecycle completion is still partial
 
 ## Quick start
@@ -32,6 +40,7 @@ Copy `.env.example` to `.env` and fill in:
 ### Frontend-only development
 ```bash
 npm install
+npm test
 npm run build
 npm run dev
 ```
@@ -85,6 +94,20 @@ docker-compose up -d
 - billing: Stripe
 - data services: PostgreSQL and Redis
 - deployment: Docker multi-stage build + docker-compose
+
+## Website in Test / deployment traceability
+
+- **Website in Test (Vercel):** pending Vercel project hookup for this repository
+- **Deployment automation reference:** no `.github/workflows` deployment automation is committed yet; target deployment platform for the test site is Vercel once environment variables and database wiring are finalized
+
+## Validation commands
+
+```bash
+npm test
+npm run build
+npm run build:baseline
+python validate.py
+```
 
 ## Ship-to-market docs
 

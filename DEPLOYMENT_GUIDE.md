@@ -15,6 +15,11 @@ Instant Ordain Certificate Pro serves a Vite frontend and FastAPI backend for Sm
 - The production container serves FastAPI on port `8080`.
 - `docker-compose.yml` is configured for local development with the app exposed at `http://localhost:8002`.
 
+## Website in Test traceability
+- target platform: Vercel
+- current URL status: pending Vercel project hookup for this repository
+- automation status: no deployment workflow is committed yet, so Vercel hookup remains a manual launch prerequisite
+
 ## Required environment variables
 ### Backend
 - `DATABASE_URL`

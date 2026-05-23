@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "node scripts/test-baseline.js",
     "build": "vite build",
+    "build:baseline": "node scripts/build-baseline.js",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:repo": "python validate.py"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
