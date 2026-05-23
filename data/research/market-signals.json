@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-23T03:56:02.190Z",
+  "product": "Instant Ordain Certificate Pro",
+  "sourceDocument": "GO_TO_MARKET.md",
+  "sources": [
+    {
+      "summary": "American Marriage Ministries reported that marriages rose while traditional weddings softened, highlighting demand for non-traditional ceremony formats and friend/family officiants",
+      "url": "https://theamm.org/articles/2039-marriages-are-up-weddings-are-down-what-officiants-should-know-about-the-2024-we"
+    },
+    {
+      "summary": "Grand View Research projected the U.S. wedding services market at multi-billion-dollar scale with ongoing growth",
+      "url": "https://www.grandviewresearch.com/industry-analysis/us-wedding-services-market-report"
+    },
+    {
+      "summary": "IBISWorld tracks officiant services as an established U.S. industry category",
+      "url": "https://www.ibisworld.com/united-states/industry/officiant-services/6351/"
+    },
+    {
+      "summary": "Zola's 2024 trend reporting supports continued digital-first planning behavior among couples",
+      "url": "https://www.zola.com/expert-advice/2024-wedding-trends-zolas-first-look-report-data-deep-dive"
+    },
+    {
+      "summary": "Stripe recommends streamlined, low-friction checkout and transparent pricing for conversion-sensitive direct-to-consumer funnels",
+      "url": "https://stripe.com/resources/more/ecommerce-checkout-best-practices"
+    }
+  ]
+}

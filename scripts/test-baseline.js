@@ -13,8 +13,13 @@ const requiredFiles = [
   '.env.example',
   'package.json',
   'validate.py',
+  path.join('artifacts', 'research', 'revvel-s2m-report.json'),
+  path.join('artifacts', 'research', 'revvel-s2m-report.md'),
+  path.join('data', 'research', 'market-signals.json'),
+  path.join('data', 'research', 'revenue-model.json'),
   path.join('scripts', 'test-baseline.js'),
   path.join('scripts', 'build-baseline.js'),
+  path.join('scripts', 'generate-research-artifacts.js'),
 ];
 
 const failures = [];
@@ -29,7 +34,13 @@ const packageJson = JSON.parse(
   fs.readFileSync(path.join(root, 'package.json'), 'utf8'),
 );
 
-const requiredScripts = ['test', 'build', 'build:baseline', 'validate:repo'];
+const requiredScripts = [
+  'research:artifacts',
+  'test',
+  'build',
+  'build:baseline',
+  'validate:repo',
+];
 for (const script of requiredScripts) {
   if (!packageJson.scripts?.[script]) {
     failures.push(`Missing package.json script: ${script}`);
@@ -40,6 +51,12 @@ const readme = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
 for (const section of ['## Project analysis', '## Website in Test / deployment traceability']) {
   if (!readme.includes(section)) {
     failures.push(`README.md missing section: ${section}`);
+  }
+}
+
+for (const line of ['`npm run research:artifacts`', 'artifacts/research/', 'data/research/']) {
+  if (!readme.includes(line)) {
+    failures.push(`README.md missing automation reference: ${line}`);
   }
 }
 

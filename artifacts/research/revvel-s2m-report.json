@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-05-23T03:56:02.190Z",
+  "product": "Instant Ordain Certificate Pro",
+  "automation": {
+    "command": "npm run research:artifacts",
+    "emittedArtifacts": [
+      "artifacts/research/revvel-s2m-report.json",
+      "artifacts/research/revvel-s2m-report.md",
+      "data/research/market-signals.json",
+      "data/research/revenue-model.json"
+    ]
+  },
+  "documentationSources": [
+    "README.md",
+    "GO_TO_MARKET.md",
+    "DEPLOYMENT_GUIDE.md"
+  ],
+  "readmeAnalysis": [
+    "**Value:** this repository already contains the full funnel surface needed to sell online ordination and certificate upgrades instead of only a backend or only a marketing shell.",
+    "**Goal priority:** the highest-priority next step is turning the existing UI + API surface into a launchable revenue path with verified billing fulfillment and deployment traceability.",
+    "**How it advances overall goals:** this product can convert direct consumer search demand for fast ordination into one-time certificate revenue, premium upsells, and repeat ministry-support offers."
+  ],
+  "websiteTraceability": [
+    "**Website in Test (Vercel):** pending Vercel project hookup for this repository",
+    "**Deployment automation reference:** no `.github/workflows` deployment automation is committed yet; target deployment platform for the test site is Vercel once environment variables and database wiring are finalized"
+  ],
+  "deploymentTraceability": [
+    "target platform: Vercel",
+    "current URL status: pending Vercel project hookup for this repository",
+    "automation status: no deployment workflow is committed yet, so Vercel hookup remains a manual launch prerequisite"
+  ],
+  "counts": {
+    "marketSignals": 5,
+    "revenuePoints": 3,
+    "launchMoves": 5
+  }
+}

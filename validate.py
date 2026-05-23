@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -16,6 +17,8 @@ def expect(condition: bool, message: str, failures: list[str]) -> None:
 def main() -> int:
     failures: list[str] = []
 
+    subprocess.run(["npm", "run", "research:artifacts"], cwd=ROOT, check=True)
+
     required_files = [
         "README.md",
         "CHANGELOG.md",
@@ -28,15 +31,20 @@ def main() -> int:
         "docker-compose.yml",
         "Dockerfile",
         "validate.py",
+        "artifacts/research/revvel-s2m-report.json",
+        "artifacts/research/revvel-s2m-report.md",
+        "data/research/market-signals.json",
+        "data/research/revenue-model.json",
         "scripts/test-baseline.js",
         "scripts/build-baseline.js",
+        "scripts/generate-research-artifacts.js",
     ]
 
     for relative_path in required_files:
         expect((ROOT / relative_path).exists(), f"Missing required file: {relative_path}", failures)
 
     package_json = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
-    for script_name in ["test", "build", "build:baseline", "validate:repo"]:
+    for script_name in ["research:artifacts", "test", "build", "build:baseline", "validate:repo"]:
         expect(
             script_name in package_json.get("scripts", {}),
             f"Missing package.json script: {script_name}",
@@ -47,6 +55,7 @@ def main() -> int:
     for required_section in [
         "## Project analysis",
         "## Website in Test / deployment traceability",
+        "## Automated research artifacts",
         "## Validation commands",
     ]:
         expect(required_section in readme, f"README.md missing section: {required_section}", failures)
@@ -57,6 +66,12 @@ def main() -> int:
     go_to_market = (ROOT / "GO_TO_MARKET.md").read_text(encoding="utf-8")
     for required_phrase in ["## Revenue framing", "## Market signals"]:
         expect(required_phrase in go_to_market, f"GO_TO_MARKET.md missing section: {required_phrase}", failures)
+
+    market_signals = json.loads((ROOT / "data/research/market-signals.json").read_text(encoding="utf-8"))
+    expect(bool(market_signals.get("sources")), "market-signals.json should contain at least one source", failures)
+
+    revenue_model = json.loads((ROOT / "data/research/revenue-model.json").read_text(encoding="utf-8"))
+    expect(bool(revenue_model.get("revenueFraming")), "revenue-model.json should contain revenue framing", failures)
 
     env_example = (ROOT / ".env.example").read_text(encoding="utf-8")
     for required_key in ["VITE_SUPABASE_URL=", "VITE_SUPABASE_ANON_KEY="]:

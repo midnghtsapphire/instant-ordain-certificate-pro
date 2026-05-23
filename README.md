@@ -100,9 +100,17 @@ docker-compose up -d
 - **Website in Test (Vercel):** pending Vercel project hookup for this repository
 - **Deployment automation reference:** no `.github/workflows` deployment automation is committed yet; target deployment platform for the test site is Vercel once environment variables and database wiring are finalized
 
+## Automated research artifacts
+
+- Run `npm run research:artifacts` to automatically emit the revvel/S2M research bundle for this repository.
+- Generated machine-readable assets are written to `data/research/`.
+- Generated reviewable artifacts are written to `artifacts/research/`.
+- `npm test` and `npm run build:baseline` both invoke this automation so S2M requests emit research outputs by default.
+
 ## Validation commands
 
 ```bash
+npm run research:artifacts
 npm test
 npm run build
 npm run build:baseline

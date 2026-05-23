@@ -7,7 +7,7 @@ if (!fs.existsSync('node_modules')) {
   commands.push('npm install --ignore-scripts');
 }
 
-commands.push('npm run build', 'python -m compileall server');
+commands.push('npm run research:artifacts', 'npm run build', 'python -m compileall server');
 
 for (const command of commands) {
   console.log(`Running: ${command}`);
