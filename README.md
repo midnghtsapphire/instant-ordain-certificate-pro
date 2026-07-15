@@ -1,5 +1,9 @@
 # Instant Ordain Certificate Pro
 
+
+<!-- AUTO-PACKAGE-BADGES:START -->
+
+<!-- AUTO-PACKAGE-BADGES:END -->
 Instant Ordain Certificate Pro is a hybrid Vite + FastAPI product for SmartMinisterBot / EverUnity Church. It combines a consumer-facing ordination website with certificate browsing, pricing, reviews, account screens, an admin surface, and backend APIs for authentication and Stripe billing.
 
 ## What the repository does
